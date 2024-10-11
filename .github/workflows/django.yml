@@ -26,6 +26,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Purge pip cache
+      run: |
+         pip cache purge
+
         
     - name: Install Dependencies
       run: |
@@ -42,6 +46,10 @@ jobs:
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
          ${{ runner.os }}-pip-
+    - name: Install aiobotocore manually
+      run: |
+         pip install aiobotocore==2.4.6
+
     - name: Debug:List Files
       run: |
         ls -R /private/var/folders/c_/
