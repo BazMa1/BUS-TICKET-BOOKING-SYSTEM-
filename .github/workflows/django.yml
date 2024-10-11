@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.9]
 
     steps:
     - uses: actions/checkout@v4
@@ -25,11 +25,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
     - name: Debug:List Files
-      run: ls -R BUS-TICKET-BOOKING-SYSTEM-/myproject  # List files in the project directory to ensure manage.py is present
+      run: ls -R myproject  # List files in the project directory to ensure manage.py is present
       
     - name: Run Tests
       run: |
-          cd BUS-TICKET-BOOKING-SYSTEM-/myproject  # Change to the correct directory
+          cd myproject  # Change to the correct directory
           python manage.py test 
      
         
