@@ -27,4 +27,7 @@ jobs:
         
     - name: Run Tests
       run: |
+        cd bus_ticket_booking_system
+        cd myproject
         python manage.py test
+    
