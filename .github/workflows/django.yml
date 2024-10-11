@@ -24,10 +24,11 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        
+    - name: Debug:List Files
+      run: ls -R  # List files to ensure manage.py is present
+      
     - name: Run Tests
       run: |
-        cd bus_ticket_booking_system
-        cd myproject
-        python manage.py test
+          python manage.py test 
+        
     
