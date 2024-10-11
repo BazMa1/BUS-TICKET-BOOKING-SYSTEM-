@@ -56,7 +56,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install aiobotocore manually
-        run: pip install aiobotocore==2.4.6
+        run: pip install aiobotocore==2.4.2
 
         
     
